@@ -1,0 +1,332 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: sans-serif;
+    font-weight: bolder;
+  /*  background: url(./Nouveau/oiuf\ -\ Copie.jpg)center/cover;*/
+}
+.conteneur{
+    width: 100%;
+    background: url(./Nouveau/oiuf\ -\ Copie.jpg)center/cover;
+   /* margin-bottom: 15px;*/
+}
+.parent, .loader-container, .cercle, .bas, .team{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent{
+    width: 100%;
+    height: 200px;
+}
+
+.loader-container{
+    border-radius: 5px;
+    background: #333;
+    width: 60px;
+    height: 60px;
+    margin: 50px auto 0;
+}
+
+.loader{
+    display: block;
+    position: relative;
+    width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: crimson;
+    animation: spin 2s linear infinite;
+   /* background: blue;*/
+}
+
+/*pour eviter de se repeter*/
+.loader::before, .loader::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 4px solid transparent;
+}
+
+/*faire autres cercle qui sont un peu plus petits à l'interieur*/
+.loader::before{
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-top-color: rgb(253, 45, 86);
+    animation: spin 3s linear infinite;
+    /*background: green;*/
+}
+
+.loader::after{
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border-top-color: rgb(192, 108, 125);
+    animation: spin 1.5s linear infinite;
+    /*background: orange;*/
+}
+/*spin: pour faire réference au annimation */
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);/*Cela permet de faire le tour*/
+    }
+}
+
+h2{
+    text-shadow:6px 4px 11px #38801d;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+ ul li{
+    list-style: none;
+    font-size: 19px;
+    letter-spacing: 2px;
+    animation: animate 2s linear infinite;
+ }
+
+ @keyframes animate {
+    0%{
+        transform: translateX(-50px);
+        letter-spacing: 2px;
+        opacity: 0;
+        color: #f00;
+    }
+    10%{
+        opacity: 1;
+    }
+    50%{
+        letter-spacing: -2px;
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(50px);
+        letter-spacing: 2px;
+        opacity: 0;
+        color: #00f;
+    }
+}
+.parent div{
+    width: 30%;
+}
+.cercle{
+   /* width: 60px;*/
+    height: 70px;
+    /*background: #ccd;*/
+    border: 5px solid #fff;/*première borduire*/
+    box-shadow: 0 0 0 5px #4973ff;/*deuxieme borduire*/
+    border-radius: 50%;/*faire le cercle*/
+    /*overflow: hidden; pour faire les cercle en entier*/
+    margin-top: 200px;
+    /*width: 20%;*/
+}
+
+/*pour le dédans*/
+.wave{
+    position: relative;
+    width: 100%;/*on renplie tout notre cercle*/
+    height: 100%;/*on renplie tout notre cercle*/
+    background: #4973ff;
+    border-radius: 50%;/*pour l'arrondir*/
+    box-shadow: inset 0 0 50px rgba(0, 0 , 0, .5);/*mettre un petit omb
+                                                        dedans*/
+}
+
+.wave:before, .wave:after{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+.wave:before{
+    border-radius: 40%;
+    background: rgba(255, 255 , 255,1);
+    animation: ani 5s linear infinite;
+}
+.wave:after{
+    border-radius: 40%;
+    background: rgb(255, 255 , 255,.5);
+    animation: ani 10s linear infinite;
+}
+@keyframes ani {
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.bas{
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px 0;
+    box-shadow:  8px 5px 20px 0px #13b8b9;
+}
+
+/*pour le div caeds*/
+.cards{
+    margin-top: 10%;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  /*pour la team le flexe etc*/
+  .team{
+   width: 90%;
+   margin: 0 auto;
+   text-align: center;
+   width: auto; /*permet une flexion automatique*/
+   justify-content: center;/*pour centrer les membre*/
+  }
+  /*pour chaque membre*/
+  
+  .team .membre{
+   margin: 0px 10px;
+   width: 30%;
+  /* padding: 5%;/*pour aerer tout*/
+   border-radius: 10px;
+  }
+  /*changer la forme de notre h3*/
+  .team .membre h3{
+   font-family: 'Allura', cursive;
+   margin-top: 40px; /*ca va laisser une espace en haut pour
+                      *nous permettre d'ajouter une image*/
+   box-shadow: 8px 5px 20px 0px #13b8b9;
+  }
+  
+  img{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+  }
+   span:before{
+    content: 'le chocolat';
+    animation: cour infinite 10s;
+   }
+   @keyframes cour{
+    0%
+    {
+     content: 'B to you';
+    }
+    25%
+    {
+     content: 'B t y';
+    }
+    100%
+    {
+     content: 'nana nana';
+    }
+   }
+
+   .nouveau{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.nouveau, .serc{
+    width: 100%; 
+}
+.cerc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 50%;
+    height: 10px;
+    /*background: #ccd;*/
+    border: 5px solid #fff;/*première borduire*/
+    box-shadow: 0 0 0 5px #4973ff;/*deuxieme borduire*/
+    border-radius: 50%;/*faire le cercle*/
+    /*overflow: hidden; pour faire les cercle en entier*/
+}
+
+/*pour le dédans*/
+.wawe{
+    position: relative;
+    width: 100%;/*on renplie tout notre cercle*/
+    height: 100%;/*on renplie tout notre cercle*/
+    background: #4973ff;
+    border-radius: 50%;/*pour l'arrondir*/
+    box-shadow: inset 0 0 50px rgba(0, 0 , 0, .5);/*mettre un petit omb
+                                                        dedans*/
+}
+
+.wawe:before, .wawe:after{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+.wawe:before{
+    border-radius: 45%;
+    background: rgba(255, 255 , 255,1);
+    animation: ami 5s linear infinite;
+}
+.wawe:after{
+    border-radius: 40%;
+    background: rgb(255, 255 , 255,.5);
+    animation: ami 10s linear infinite;
+}
+@keyframes ami {
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.diviser{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+ }
+
+
+.div2{
+   width: 60px;
+   height: 60px;
+   object-fit: cover; /*pour adapter une image a un texte*/
+   border-radius: 50%;
+   float: left;
+   shape-outside: margin-box;/*pour enrouler une image sur un texte*/
+   padding: 15px;
+   margin-bottom: 50px;
+}
+
+
+article{
+   margin: 0 auto;
+   /*padding: 10px;*/
+   border-radius: 10px;
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+   width: 90%;
+}
+
+   
